@@ -10,6 +10,7 @@ export const getIds = (req,res,next) =>{
 
 export const createUser = async (req,res,next) =>{
     console.log(`username: ${req.body.username}`);
+    console.log(`username: ${req.body.password}`);
     const newUser = new User({username: req.body.username, userpass: req.body.password});
     await newUser.save();
     res.json({text: "there is no ids"});
